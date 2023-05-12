@@ -17,10 +17,10 @@
 #include <poll.h>
 #include <signal.h>
 
-#define oneK 1000
+#define oneK 1024
 #define S_FD_AMOUNT 3
 #define C_FD_AMOUNT 2
-#define chunk 64000
+#define chunk 65536
 #define hundredMB 100 * 1024 * 1024
 #define PARTB_PORT 8080
 
