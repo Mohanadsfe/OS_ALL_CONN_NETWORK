@@ -16,15 +16,6 @@ M&S, HW3
 
 
 
-     ![Screenshot from 2023-05-12 11-50-06](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/92846018/270051d2-c6d2-4d7a-9a68-278cc936ce72)
-
-
-
-     ![Screenshot from 2023-05-12 11-49-41](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/92846018/e08a6c39-3b54-4579-9932-007494f6f385)
-
-
-
-
 
 ***///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
