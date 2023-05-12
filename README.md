@@ -1,4 +1,7 @@
 # OS- HW3
+For Computer Science B.S.c Ariel University.
+
+3'rd assignment in Operation Systems course. 
 
 ## Authors:
 Mohanad Safi 208113381
