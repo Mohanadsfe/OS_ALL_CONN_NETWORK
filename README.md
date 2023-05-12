@@ -45,18 +45,25 @@ M&S, HW3
     </div> 
 
     
-<a>
+
     
 void c_tcp_ipv4_channel(char* address[]);
+    
 void c_tcp_ipv6_channel(char* address[]);
+    
 void c_udp_ipv4_channel(char* address[]);
+    
 void c_uds_stream_channel(char* address[]);
+    
 void c_uds_dgram_channel(char* address[]);
+    
 void c_udp_ipv6_channel(char* address[]);
+    
 void c_pipeline_channel(char* address[]);
+    
 void c_mmap_channel(char* address[]);
 
-</a>
+
 
 
 
@@ -66,18 +73,25 @@ void c_mmap_channel(char* address[]);
 
 **Each function have her work to connect with specifc (type) and (param) , in the final it's return the time that's get to do the job:- 
 
-<a> 
+
 
 long s_tcp_ipv4_channel();
+    
 long s_tcp_ipv6_channel();
+    
 long s_udp_ipv4_channel();
+    
 long s_uds_stream_channel();
+    
 long s_uds_dgram_channel();
+    
 long s_udp_ipv6_channel();
+    
 long s_pipeline_channel();
+    
 long s_mmap_channel();
 
-</a>
+
 
 
   <div> Some Pictures for run code (PARTB) </div> 
