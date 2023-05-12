@@ -1,176 +1,113 @@
-# OS_ALL_CONN_NETWORK
+# OS- HW3
 
+## Authors:
+Mohanad Safi 208113381
 
-OS
-M&S, HW3
+Shahar Zaidel 211990700
 
-***PARTA
+# Part A
 
-# Chat:- 
+# Chat Application
 
-    # RUN
+## Description
+this app is a chat application that allows two users to communicate with each other using TCP protocol.
+the app is written in C language. 
+this app uses the poll() function to handle multiple streams -
+in this way, the client can send and receive messages at the same time.
+client - reads from the keyboard and sends the message to the server.
+also, reads from the server's port and prints the message to the screen.
+server - reads from the keyboard and sends the message to the client.
+also, reads from the client's port and prints the message to the screen.
 
-    The client side: stnc -c IP PORT
-    The server side:stnc -s PORT
-    the communication done using IPv4 TCP protocol
-![image](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/117997542/63c505a6-3ba4-4813-81e9-7320fb0e4a6e)
+notice - the server must be run before the client.
+notice - the client and the server talk on the same port, received as an argument from the client and the server.
+so, the client and the server must be run with the same port number, or it won't work.
 
+## Requirements
+- Full linux environment - not tested on windows or wsl
+- GCC compiler
 
+## How to run
+`The client side: stnc -c IP PORT`
+`The server side:stnc -s PORT`
 
-![Screenshot from 2023-05-12 13-01-22](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/92846018/ec57ccdf-8825-45d6-9837-faa2a171f252)
+the communication is done using IPv4 TCP protocol.
 
+# Part B
 
-***///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+## network performance test tool
 
+## Description
+this app is a network performance test tool:
+the client generates a random 100MB chunk of data and sends it to the server.
+the client can send it in 8 different types of communication styles:
+- TCP IPv4
+- TCP IPv6
+- UDP IPv4
+- UDP IPv6
+- Unix Domain Socket (UDS) :stream
+- Unix Domain Socket (UDS) :datagram
+- Pipeline
+- Mmap
 
+the server receives the data and prints the time it took to receive the data.
 
+## How to run
+`The client side: stnc -c IP PORT -p <type> <param>`
 
-***PARTB
+for quiet mode: 
 
-# Clients:- 
+`The server side: stnc -s PORT -p -q` - only prints the time it took to receive the data.
 
-    # RUN
-    
-  <div> 
-  
-    communications styles are:
-    tcp/udp ipv4/ipv6 (4 variants)
-    mmap a file. Named pipe (2 variants)
-    Unix Domain Socket (UDS) :stream and datagram (2 variants)
-    usage:
-    The client side: stnc -c IP PORT -p <type> <param>
-    -p will indicate to perform the test
-    <type> will be the communication types: so it can be ipv4,ipv6,mmap,pipe,uds
-    <param> will be a parameter for the type. It can be udp/tcp or dgram/stream or file name:
+### Client side functions: 
+
+- void c_tcp_ipv4_channel(char* address[]);
+![image](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/117997542/8174b7f6-7013-4197-8839-9625fcaaa049)
+
+- void c_tcp_ipv6_channel(char* address[]);
+![image](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/117997542/d8c0fd70-6738-46ff-a4b5-b3482e4f6119)
+
+- void c_udp_ipv4_channel(char* address[]);
+![image](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/117997542/6c9e9b2e-9332-4a1e-b101-4cb898d23078)
+
+- void c_udp_ipv6_channel(char* address[]);
+![image](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/117997542/9b392444-8bb9-448d-90ef-0b14e4637da6)
  
-    </div> 
+- void c_uds_stream_channel(char* address[]);
+![image](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/117997542/86cfac74-cc07-40ad-9282-97a1117c4af1)
 
-    
+- void c_uds_dgram_channel(char* address[]);
+![image](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/117997542/1bd3a82c-2b4c-47d8-8f6c-26e249835794)
 
-    
-void c_tcp_ipv4_channel(char* address[]);
-    
-void c_tcp_ipv6_channel(char* address[]);
-    
-void c_udp_ipv4_channel(char* address[]);
-    
-void c_uds_stream_channel(char* address[]);
-    
-void c_uds_dgram_channel(char* address[]);
-    
-void c_udp_ipv6_channel(char* address[]);
-    
-void c_pipeline_channel(char* address[]);
-    
-void c_mmap_channel(char* address[]);
+- void c_pipeline_channel(char* address[]);
+- void c_mmap_channel(char* address[]);
 
+# Server side functions:
 
+- long s_tcp_ipv4_channel();
+![image](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/117997542/b80632d0-8fa3-4a5b-a5fb-1e7f8682ad6c)
 
+- long s_tcp_ipv6_channel();
+![image](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/117997542/feff3258-af96-4ce6-b6ca-94930bec16d3)
 
+- long s_udp_ipv4_channel();
+![image](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/117997542/d2b42557-38b9-42b8-a2a1-abeb5d151dce)
 
+- long s_udp_ipv6_channel();
+![image](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/117997542/82dd4eb4-39ff-4efa-af0f-4ba7c894d24c)
 
+- long s_uds_stream_channel();
+![image](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/117997542/7c02ff75-e457-4f8b-b0b1-c6309a7f1ef3)
 
-# Servers:- 
+- long s_uds_dgram_channel();
+![image](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/117997542/8130b17c-251c-4852-9eb4-ea5bc36799d5)
 
-**Each function have her work to connect with specifc (type) and (param) , in the final it's return the time that's get to do the job:- 
+- long s_pipeline_channel();
+![image](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/117997542/9a3c1ce9-4b1b-4932-bc46-f78d76f94a6a)
 
-
-
-long s_tcp_ipv4_channel();
-    
-long s_tcp_ipv6_channel();
-    
-long s_udp_ipv4_channel();
-    
-long s_uds_stream_channel();
-    
-long s_uds_dgram_channel();
-    
-long s_udp_ipv6_channel();
-    
-long s_pipeline_channel();
-    
-long s_mmap_channel();
+- long s_mmap_channel();
 
 
-
-
-  <div> Some Pictures for run code (PARTB) </div> 
-
-***///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-  
-  
-  <div>  udp_ipv4 </div> 
-  
-  ![Screenshot from 2023-05-12 12-05-08](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/92846018/62f69e22-9de3-4bd7-a6c7-4cd4d8f134df)
-
-  
-  ![Screenshot from 2023-05-12 12-04-49](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/92846018/42285532-b7f9-45bb-9484-b4eff841cf4b)
-
-
-   <div>  udp_ipv6 </div> 
-    
-  ![Screenshot from 2023-05-12 12-07-24](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/92846018/a5dcb6ff-86c4-497b-b9c7-da641a976005)
-
-  ![Screenshot from 2023-05-12 12-07-10](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/92846018/984bca08-b5de-4b5a-88c5-e60f70a14692)
-
-    
-    
-    
- ***///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  
-  
-   <div>  tcp_ipv6 </div> 
-
-  ![Screenshot from 2023-05-12 12-12-43](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/92846018/0af77187-df9a-4282-b223-0e0024fcd10f)
-
-  
-  ![Screenshot from 2023-05-12 12-12-29](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/92846018/bb4feb0b-8d10-43e1-bac2-0010c4c6acd6)
-
-  
-   <div>  tcp_ipv4 </div> 
-
-  
-  ![Screenshot from 2023-05-12 12-13-55](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/92846018/58806f8f-99c4-42e6-8ac4-b63fbecb8ccb)
-
-
-  ![Screenshot from 2023-05-12 12-13-45](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/92846018/39633657-9783-4f9f-bc4d-2b32b168011a)
-
-  
-  
- ***///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-     <div>  mmap </div> 
-
-  
-  ![Screenshot from 2023-05-12 12-18-00](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/92846018/5b53d727-7ba3-4dbe-86b9-2fd1f257fb9e)
-  
-  
-  ![Screenshot from 2023-05-12 12-17-48](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/92846018/c4dd1e7e-abc0-40c1-a9d1-4ea698ca85d0)
-  
-  
-   ***///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-       <div>  pipe </div> 
-  
-  ![Screenshot from 2023-05-12 12-20-09](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/92846018/017bc8fd-7dda-42c0-b022-d65e703a43e4)
-  
-  
-  ![Screenshot from 2023-05-12 12-19-57](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/92846018/096d3f46-6a5b-4562-821e-44255b42b82b)
-
-  
-  
-  <div> Then will get a new file with the data :- </div> 
-  
-  
-  ![Screenshot from 2023-05-12 12-21-15](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/92846018/31afdaff-8ee0-4d9b-8ae4-908f7b38eb5b)
-
-  
-  
-  
-
-  
   
 
 
