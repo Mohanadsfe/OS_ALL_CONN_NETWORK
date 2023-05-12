@@ -14,13 +14,13 @@ M&S, HW3
     The server side:stnc -s PORT
     the communication done using IPv4 TCP protocol
 
-    
-    ![Screenshot from 2023-05-12 11-49-41](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/92846018/c3cbcb52-2f92-490e-a599-753b73abcb27)
+    ![Screenshot from 2023-05-12 11-50-06](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/92846018/8fa4fa61-a016-4f60-9aa3-2d33916ac626)
+
+
+    ![Screenshot from 2023-05-12 11-49-41](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/92846018/2a26856c-277c-4c77-81bc-03fc183684e9)
 
 
 
-
-    ![Screenshot from 2023-05-12 11-50-06](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/92846018/7652a8a5-d260-4ef9-9471-d9b59b2cd8be)
 
 ***///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
