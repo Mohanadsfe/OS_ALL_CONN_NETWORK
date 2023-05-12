@@ -98,12 +98,14 @@ long s_mmap_channel();
 
 
    <div>  udp_ipv6 </div> 
-  
-    ![Screenshot from 2023-05-12 12-07-24](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/92846018/f0ec6cdb-188d-4ea2-ac2a-9bc3a17ec590)
+    
+  ![Screenshot from 2023-05-12 12-07-24](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/92846018/a5dcb6ff-86c4-497b-b9c7-da641a976005)
 
-  
-    ![Screenshot from 2023-05-12 12-07-10](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/92846018/fa43e534-c81b-475d-903e-db1342047c4b)
+  ![Screenshot from 2023-05-12 12-07-10](https://github.com/Mohanadsfe/OS_ALL_CONN_NETWORK/assets/92846018/984bca08-b5de-4b5a-88c5-e60f70a14692)
 
+    
+    
+    
  ***///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   
   
